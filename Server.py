@@ -4,13 +4,11 @@ import time
 import os
 
 
-#For FTP Server
-# Student Boilerlate Code Start
-#pip install pyftpdlib < this should be installed
+
 from pyftpdlib.authorizers import DummyAuthorizer
 from pyftpdlib.handlers import FTPHandler
 from pyftpdlib.servers import FTPServer
-# Student Boilerlate Code End
+
 
 
 IP_ADDRESS = '127.0.0.1'
@@ -19,7 +17,7 @@ SERVER = None
 BUFFER_SIZE = 4096
 clients = {}
 
-#Creating shared_files directory on server
+
 is_dir_exists = os.path.isdir('shared_files')
 print(is_dir_exists)
 if(not is_dir_exists):
@@ -57,7 +55,7 @@ def setup():
     SERVER  = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     SERVER.bind((IP_ADDRESS, PORT))
 
-    # Listening incomming connections
+    
     SERVER.listen(100)
 
     print("\t\t\t\tSERVER IS WAITING FOR INCOMMING CONNECTIONS...")
